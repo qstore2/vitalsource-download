@@ -1,10 +1,14 @@
 #!/bin/sh
 BOOK=$1
-STARTPAGE=0000
+STARTPAGE=0001
 ENDPAGE=2000
 
 mkdir -p "$BOOK"
 
+code=`curl -s -b cookies.txt -c cookies.txt "https://jigsaw.vitalsource.com/books/$BOOK/content/image/cover.jpg" -o "$BOOK/0000.jpg" -w "%{http_code}"`
+if [ $code -ne 200 ]; then
+  rm -f "$BOOK/0000.jpg"
+fi
 
 for num in $(seq -w $STARTPAGE $ENDPAGE); do
   echo Trying page $num...
@@ -15,7 +19,4 @@ for num in $(seq -w $STARTPAGE $ENDPAGE); do
   fi
 done
 
-#100-ARCHIT-65-EN-LG-E
-#100-ARCHIT-65-EN-SG-E
-#100-ARCHIT-64-EN-LG-E
-#100-ARCHIT-64-EN-SG-E
+
