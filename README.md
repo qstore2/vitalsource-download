@@ -8,7 +8,7 @@
 4. Run "vitalsource.sh VBID"*
 *to find VBID, click on the (i) on the web version*
 
-`if the image shows "Please refresh your browser", starts from step 2 to step 5 again (re-download the cookies), edit the STARTPAGE in .sh file to continue the page (don't worry about ENDPAGE)`
+`**if the image shows "Please refresh your browser", starts from step 2 to step 4 again (re-download the cookies), edit the STARTPAGE in .sh file to continue the page (don't worry about ENDPAGE)**`
 
 <br>
 
